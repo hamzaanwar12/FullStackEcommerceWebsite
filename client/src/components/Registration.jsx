@@ -36,8 +36,7 @@ const RegistrationForm = () => {
 
     // console.log("signup")
     // console.log(signup)
-    const apiUrl = process.env.REACT_APP_BACKEND_URL;
-
+    
     const handleFileChange = (event) => {
         // console.log("here We")
         event.preventDefault();
@@ -75,7 +74,7 @@ const RegistrationForm = () => {
             // console.log(values)
 
             try {
-                const result = await fetch(`${apiUrl}/user/registration`, {
+                const result = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/user/registration`, {
                     method: "post",
                     // body: JSON.stringify({...values,avatar:avatar}),
                     body: JSON.stringify({...UserValues,avatar:avatar}),
@@ -99,7 +98,7 @@ const RegistrationForm = () => {
                     if (values.role != "admin") 
                     {
                         try {
-                            const cartResult = await fetch(`${apiUrl}/addCart`, {
+                            const cartResult = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/addCart`, {
                                 method: "post",
                                 body: JSON.stringify({
                                     userId: check.id,

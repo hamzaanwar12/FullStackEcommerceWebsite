@@ -19,7 +19,6 @@ export default function EditProfile({close}) {
     const [avatar, setAvatar] = useState(previousUser.avatar)
     const previousUser = useSelector(state => state.signUp.user)
     const dispatch = useDispatch()
-    const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 
     // console.log("previousUser")
@@ -64,7 +63,7 @@ export default function EditProfile({close}) {
 
 
             try {
-                const result = await fetch(`${apiUrl}/user/updateUserProfile`, {
+                const result = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/user/updateUserProfile`, {
                     method: "post",
                     body: JSON.stringify(newValues),
                     headers: {
@@ -90,10 +89,10 @@ export default function EditProfile({close}) {
                             avatar:  check.avatar
                         }
                     }))
-                    console.log({
-                        isLogin: true,
-                        user: check
-                    })
+                    // console.log({
+                    //     isLogin: true,
+                    //     user: check
+                    // })
                     close()
                 }
                 else {

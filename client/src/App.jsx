@@ -1,112 +1,106 @@
-import React, { lazy, Suspense, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { lazy, Suspense, useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from 'react';
 import { fetchData } from "./store/Cart.js";
-import { fetchUserOrders } from "./store/Order.js"
-import { fetchProducts, ProductActions } from "./store/ProductSlice.js"
+import { fetchUserOrders } from "./store/Order.js";
+import { fetchProducts, ProductActions } from "./store/ProductSlice.js";
 
-const Lazy = lazy(() => import("./components/Loader"))
-const RegistrationForm = lazy(() => import('./components/Registration'))
-const LoginForm = lazy(() => import('./components/Login'));
-const Home = lazy(() => import("./pages/Home"))
-const ProductSpecific = lazy(() => import("./pages/ProductSpecific"))
-const Search = lazy(() => import("./pages/SearchPage"))
-const Products = lazy(() => import("./components/Products"))
-const Cart = lazy(() => import("./pages/CartPage"))
-const Profile = lazy(() => import("./pages/Profile.jsx"))
-const ShippingPage = lazy(() => import("./pages/ShippingPage.jsx"))
-const PaymentPage = lazy(() => import("./pages/PaymentPage.jsx"))
-const ConfirmOrderPage = lazy(() => import("./pages/ConfirmOrderPage.jsx"))
-const OrdersPage = lazy(() => import("./pages/OrdersPage.jsx"))
-const CreateProductPage = lazy(() => import("./pages/CreateProductPage.jsx"))
-const DashboardPage = lazy(() => import("./components/Dashboard.jsx"))
+const Lazy = lazy(() => import("./components/Loader"));
+const RegistrationForm = lazy(() => import("./components/Registration"));
+const LoginForm = lazy(() => import("./components/Login"));
+const Home = lazy(() => import("./pages/Home"));
+const ProductSpecific = lazy(() => import("./pages/ProductSpecific"));
+const Search = lazy(() => import("./pages/SearchPage"));
+const Products = lazy(() => import("./components/Products"));
+const Cart = lazy(() => import("./pages/CartPage"));
+const Profile = lazy(() => import("./pages/Profile.jsx"));
+const ShippingPage = lazy(() => import("./pages/ShippingPage.jsx"));
+const PaymentPage = lazy(() => import("./pages/PaymentPage.jsx"));
+const ConfirmOrderPage = lazy(() => import("./pages/ConfirmOrderPage.jsx"));
+const OrdersPage = lazy(() => import("./pages/OrdersPage.jsx"));
+const CreateProductPage = lazy(() => import("./pages/CreateProductPage.jsx"));
+const DashboardPage = lazy(() => import("./components/Dashboard.jsx"));
 
-import "./App.css"
-
-
-
+import "./App.css";
 
 const App = React.memo(() => {
 
-  const apiUrl = process.env.REACT_APP_BACKEND_URL;
-  const [strpieApiKey, setStrpieApiKey] = useState("")
-  // const [strpieSecret, setStrpieSecret] = useState("")
-  const user = useSelector(state => state.signUp)
+  const [stripeApiKey, setStripeApiKey] = useState("");
+  const user = useSelector((state) => state.signUp);
+  
+  // console.log("import.meta.env", import.meta.env);
+  // console.log("VITE_BASE_URL", JSON.stringify(import.meta.env.VITE_BASE_URL));
+  // console.log("VITE_BACKEND_URL", JSON.stringify(import.meta.env.VITE_BACKEND_URL));
 
-  console.log("user in app")
-  console.log(user)
+  // const apiUrl = JSON.stringify(import.meta.env.VITE_BACKEND_URL);
+  // console.log("apiUrl", apiUrl); // Debugging line
+  // console.log("user in app");
+  // console.log(user);
 
-  const dispatch = useDispatch()
-  const BoughtCart = useSelector(state => state.cart)
+
+
+  const dispatch = useDispatch();
+  const BoughtCart = useSelector((state) => state.cart);
 
   async function getStripeApiKey() {
-    const data = await fetch(`${apiUrl}/getStripeApiKey`, {
-      method: "get",
-      headers: {
-        "Content-Type": "application/json"
-      },
-    })
-
-    const result = await data.json()
-    console.log(result)
-    setStrpieApiKey(result.stripeApiKey)
-    // setStrpieSecret(result.secretKey)
-    // console.log(data)
-  }
-
-  useEffect(() => {
-
-    const result = async()=>
-    {
-      const products = await fetch(`${apiUrl}/allProducts`, {
+    try {
+      const response = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/getStripeApiKey`, {
         method: "get",
         headers: {
           "Content-Type": "application/json",
-        }
-      })
-      if(!products.ok)
-      {
-        console.log("Not Ok")
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
       }
-      const productResults = await products.json()
-      dispatch(ProductActions.setProducts(productResults.products))
-    }
 
-    try{
-      result()
-
+      const result = await response.json();
+      console.log(result);
+      setStripeApiKey(result.stripeApiKey);
+    } catch (error) {
+      console.log(error.message)
+      console.error("Failed to fetch the Stripe API key:", error);
     }
-    catch(error)
-    {
-      console.log(error)
-      console.log("Could not get")
-    }
+  }
 
-    /*
-        const check = async () => {
-          try {
-            console.log("Fetching the Stripe Key")
-            await getStripeApiKey()
-    
-          }
-          catch (error) {
-            console.log("error in loadStripe")
-            console.log(error)
-            console.log(error.message)
-          }
+  useEffect(() => {
+    const fetchProductsData = async () => {
+      try {
+        const response = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/allProducts`, {
+          method: "get",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
         }
-        check()
-        */
-    if (user.islogin) {
-      console.log("Checking")
-    }
-    // console.log(error.Stack
-  }, [])
 
+        const productResults = await response.json();
+        dispatch(ProductActions.setProducts(productResults.products));
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+      }
+    };
+
+    fetchProductsData();
+
+    if (user.islogin) {
+      console.log("User is logged in, fetching Stripe API key...");
+      getStripeApiKey();
+    }
+  }, [apiUrl]);
 
   return (
-    <Suspense fallback={<div className='w-[15%] h-[50%] relative mx-auto mt-[12%]'> <Lazy /></div>}>
+    <Suspense
+      fallback={
+        <div className="w-[15%] h-[50%] relative mx-auto mt-[12%]">
+          <Lazy />
+        </div>
+      }
+    >
       <Router>
         <Routes>
           <Route path="/registration" element={<RegistrationForm />} />
@@ -119,25 +113,18 @@ const App = React.memo(() => {
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Account" element={<Profile />} />
           <Route path="/Shipping" element={<ShippingPage />} />
-
-          {/* <Elements stripe={loadStripe(strpieApiKey)}> */}
-          {/* <Route path="/payment" element={<PaymentPage secretKey={strpieSecret} stripeApiKey={strpieApiKey} />} /> */}
-          <Route path="/payment" element={<PaymentPage stripeApiKey={strpieApiKey} />} />
-          {/* </Elements> */}
-
+          <Route
+            path="/payment"
+            element={<PaymentPage stripeApiKey={stripeApiKey} />}
+          />
           <Route path="/confirmOrder" element={<ConfirmOrderPage />} />
           <Route path="/orders" element={<OrdersPage />} />
           <Route path="/createProduct" element={<CreateProductPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
-
-          {/* <Route path="/SuccessMessage" element={<SuccessMessage />} /> */}
-          {/* <Route path="/lazy" element={<Lazy />} /> */}
-          {/* <Route path="/login" element={<Login />} /> */}
         </Routes>
       </Router>
     </Suspense>
   );
-})
+});
 
-
-export default App 
+export default App;

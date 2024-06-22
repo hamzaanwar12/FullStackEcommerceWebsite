@@ -7,9 +7,6 @@ const initialState = {
     totalPrice: 0,
 };
 
-const apiUrl = process.env.REACT_APP_BACKEND_URL;
-
-
 const cartSlice = createSlice({
     name: "cart",
     initialState,
@@ -67,8 +64,9 @@ const cartSlice = createSlice({
 
 const sendData = (boughtCart) => {
     return async (dispatch) => {
+
         const sendRequest = async () => {
-            const response = await fetch(`${apiUrl}/updateCart`, {
+            const response = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/updateCart`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -97,7 +95,7 @@ const sendData = (boughtCart) => {
 const fetchData = (getCart) => {
     return async (dispatch) => {
         const fetchRequest = async () => {
-            const response = await fetch(`${apiUrl}/getCart`, {
+            const response = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/getCart`, {
                 method: "POST",
                 body: JSON.stringify(getCart),
                 headers: {

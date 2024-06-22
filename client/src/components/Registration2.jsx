@@ -22,7 +22,6 @@ const RegistrationForm = () => {
     const [visibility,setVisibility] = useState(false)
     const [error,setError] = useState(null)
     const [phone,setphoneValue] = useState("")
-    const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
  
     const { values, errors, handleBlur, handleChange, handleSubmit, touched } = useFormik({
@@ -30,7 +29,7 @@ const RegistrationForm = () => {
         validationSchema: regstrationSchema,
 
         onSubmit: async (values,{resetForm}) => {
-            await fetch(`${apiUrl}/`, {
+            await fetch(`https://full-stack-ecommerce-website-server.vercel.app/`, {
                 method: "post",
                 body: JSON.stringify(values),
                 headers: {

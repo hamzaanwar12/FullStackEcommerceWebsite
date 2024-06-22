@@ -14,7 +14,6 @@ const initialValues = {
 }
 
 export default function ChangePassword({close}) {
-    const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 
     const [visibility, setVisibility] = useState(false)
@@ -41,7 +40,7 @@ export default function ChangePassword({close}) {
 
 
             try {
-                const result = await fetch(`${apiUrl}/user/updatePassword`, {
+                const result = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/user/updatePassword`, {
                     method: "post",
                     body: JSON.stringify(newValues),
                     headers: {
@@ -53,12 +52,12 @@ export default function ChangePassword({close}) {
                 console.log(check)
                 if (check.status == 200)
                 {
-                    console.log("User Updated")
-                    console.log(check)
-                    console.log({
-                        isLogin: true,
-                        user: check
-                    })
+                    // console.log("User Updated")
+                    // console.log(check)
+                    // console.log({
+                    //     isLogin: true,
+                    //     user: check
+                    // })
                     close()
                 }
                 else {

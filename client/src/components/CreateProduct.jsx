@@ -62,8 +62,8 @@ export default function CreateProduct() {
         }
       };
 
-      if (event.target.files && event.target.files.length > 0) {
-        reader.readAsDataURL(event.target.files[0]);
+      if (e.target.files && e.target.files.length > 0) {
+        reader.readAsDataURL(e.target.files[0]);
       }
 
     })

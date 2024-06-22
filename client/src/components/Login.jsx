@@ -25,7 +25,6 @@ const LoginForm = () => {
     const cart = useSelector(state => state.cart)
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 
 
@@ -38,7 +37,7 @@ const LoginForm = () => {
             // console.log(values)
 
             try {
-                const result = await fetch(`${apiUrl}/user/login`, {
+                const result = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/user/login`, {
                     method: "post",
                     body: JSON.stringify(values),
                     headers: {
@@ -61,7 +60,7 @@ const LoginForm = () => {
                     }))
 
 
-                    const cartResult = await fetch(`${apiUrl}/getCartByUser`,
+                    const cartResult = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/getCartByUser`,
                         {
                             method: "post",
                             body: JSON.stringify({

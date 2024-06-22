@@ -5,7 +5,6 @@ const initialState = {
     orders: []
 }
 
-const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 
 const orderSlice = createSlice(
@@ -35,6 +34,7 @@ const orderActions = orderSlice.actions
 
 const sendOrder = (orderData) => {
     return async (dispatch) => {
+
         const sendRequest = async () => {
             console.log({
                 status: "Pending",
@@ -42,7 +42,7 @@ const sendOrder = (orderData) => {
                 body: JSON.stringify(orderData)
             })
 
-            const response = await fetch(`${apiUrl}/order/placeOrder`, {
+            const response = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/order/placeOrder`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -85,9 +85,10 @@ const sendOrder = (orderData) => {
 
 const fetchUserOrders = (id) => {
     return async (dispatch) => {
+
         const fetchRequest = async () => {
             console.log("Fetching ")
-            const response = await fetch(`${apiUrl}/order/getUserOrders`, {
+            const response = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/order/getUserOrders`, {
                 method: "POST",
                 body: JSON.stringify({userId:id}),
                 headers: {
@@ -121,9 +122,10 @@ const fetchUserOrders = (id) => {
 
 const fetchOrders = () => {
     return async (dispatch) => {
+
         const fetchRequest = async () => {
             console.log("Fetching ")
-            const response = await fetch(`${apiUrl}/order/getAllOrders`, {
+            const response = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/order/getAllOrders`, {
                 method: "get",
                 headers: {
                     "Content-Type": "application/json",
@@ -138,8 +140,8 @@ const fetchOrders = () => {
             const fetchedCart = await response.json()
             dispatch(orderActions.setOrders({orders:fetchedCart.orders}))
 
-            console.log("Fetched Orders")
-            console.log(fetchedCart.orders)
+            // console.log("Fetched Orders")
+            // console.log(fetchedCart.orders)
         }
 
         try {
@@ -155,9 +157,10 @@ const fetchOrders = () => {
 
 const updateOrder = (values) => {
     return async (dispatch) => {
+
         const updateRequest = async () => {
-            console.log("Fetching ")
-            const response = await fetch(`${apiUrl}/order/updateOrderStatus`, {
+            // console.log("Fetching ")
+            const response = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/order/updateOrderStatus`, {
                 method: "post",
                 body: JSON.stringify(values),
                 headers: {
@@ -173,8 +176,8 @@ const updateOrder = (values) => {
             const fetchedCart = await response.json()
 
 
-            console.log("Fetched Orders")
-            console.log(fetchedCart.orders)
+            // console.log("Fetched Orders")
+            // console.log(fetchedCart.orders)
         }
 
         try {

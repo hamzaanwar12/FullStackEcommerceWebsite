@@ -8,7 +8,6 @@ const initialState = {
     viewProduct:null
 }
 
-const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 
 const ProductSlice = createSlice({
@@ -107,13 +106,14 @@ const ProductActions = ProductSlice.actions
 
 const addProduct = (productData) => {
     return async (dispatch) => {
+
         const sendRequest = async () => {
             console.log({
                 status: "Pending",
                 message: "Placing Product"
             })
 
-            const response = await fetch(`${apiUrl}/addProduct`, {
+            const response = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/addProduct`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -151,9 +151,10 @@ const addProduct = (productData) => {
 
 const fetchUserProducts = (id) => {
     return async (dispatch) => {
+
         const fetchRequest = async () => {
             console.log("Fetching ")
-            const response = await fetch(`${apiUrl}/getUserProducts`, {
+            const response = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/getUserProducts`, {
                 method: "POST",
                 body: JSON.stringify({userId:id}),
                 headers: {
@@ -187,9 +188,10 @@ const fetchUserProducts = (id) => {
 
 const fetchProducts = () => {
     return async (dispatch) => {
+
         const fetchRequest = async () => {
             console.log("Fetching ")
-            const response = await fetch(`${apiUrl}/products`, {
+            const response = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/products`, {
                 method: "get",
                 headers: {
                     "Content-Type": "application/json",
@@ -221,9 +223,10 @@ const fetchProducts = () => {
 
 const updateProduct = (values) => {
     return async (dispatch) => {
+
         const updateRequest = async () => {
             console.log("Fetching ")
-            const response = await fetch(`${apiUrl}/order/updateProduct`, {
+            const response = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/order/updateProduct`, {
                 method: "post",
                 body: JSON.stringify(values),
                 headers: {
