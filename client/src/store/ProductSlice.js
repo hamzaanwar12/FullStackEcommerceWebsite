@@ -112,7 +112,7 @@ const addProduct = (productData) => {
                 message: "Placing Product"
             })
 
-            const response = await fetch(" http://localhost:5000/addProduct", {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/addProduct`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -152,7 +152,7 @@ const fetchUserProducts = (id) => {
     return async (dispatch) => {
         const fetchRequest = async () => {
             console.log("Fetching ")
-            const response = await fetch(" http://localhost:5000/product/getUserProducts", {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/getUserProducts`, {
                 method: "POST",
                 body: JSON.stringify({userId:id}),
                 headers: {
@@ -188,7 +188,7 @@ const fetchProducts = () => {
     return async (dispatch) => {
         const fetchRequest = async () => {
             console.log("Fetching ")
-            const response = await fetch(" http://localhost:5000/products", {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/products`, {
                 method: "get",
                 headers: {
                     "Content-Type": "application/json",
@@ -222,7 +222,7 @@ const updateProduct = (values) => {
     return async (dispatch) => {
         const updateRequest = async () => {
             console.log("Fetching ")
-            const response = await fetch(" http://localhost:5000/order/updateProduct", {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/order/updateProduct`, {
                 method: "post",
                 body: JSON.stringify(values),
                 headers: {

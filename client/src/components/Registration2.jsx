@@ -29,7 +29,7 @@ const RegistrationForm = () => {
         validationSchema: regstrationSchema,
 
         onSubmit: async (values,{resetForm}) => {
-            await fetch("http://localhost:5000/", {
+            await fetch(`${process.env.REACT_APP_BACKEND_URL}/`, {
                 method: "post",
                 body: JSON.stringify(values),
                 headers: {

@@ -73,7 +73,7 @@ const RegistrationForm = () => {
             // console.log(values)
 
             try {
-                const result = await fetch("http://localhost:5000/user/registration", {
+                const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/user/registration`, {
                     method: "post",
                     // body: JSON.stringify({...values,avatar:avatar}),
                     body: JSON.stringify({...UserValues,avatar:avatar}),
@@ -97,7 +97,7 @@ const RegistrationForm = () => {
                     if (values.role != "admin") 
                     {
                         try {
-                            const cartResult = await fetch("http://localhost:5000/addCart", {
+                            const cartResult = await fetch(`${process.env.REACT_APP_BACKEND_URL}/addCart`, {
                                 method: "post",
                                 body: JSON.stringify({
                                     userId: check.id,

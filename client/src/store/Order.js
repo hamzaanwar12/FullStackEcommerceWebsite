@@ -39,7 +39,7 @@ const sendOrder = (orderData) => {
                 body: JSON.stringify(orderData)
             })
 
-            const response = await fetch(" http://localhost:5000/order/placeOrder", {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/order/placeOrder`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -84,7 +84,7 @@ const fetchUserOrders = (id) => {
     return async (dispatch) => {
         const fetchRequest = async () => {
             console.log("Fetching ")
-            const response = await fetch(" http://localhost:5000/order/getUserOrders", {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/order/getUserOrders`, {
                 method: "POST",
                 body: JSON.stringify({userId:id}),
                 headers: {
@@ -120,7 +120,7 @@ const fetchOrders = () => {
     return async (dispatch) => {
         const fetchRequest = async () => {
             console.log("Fetching ")
-            const response = await fetch(" http://localhost:5000/order/getAllOrders", {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/order/getAllOrders`, {
                 method: "get",
                 headers: {
                     "Content-Type": "application/json",
@@ -154,7 +154,7 @@ const updateOrder = (values) => {
     return async (dispatch) => {
         const updateRequest = async () => {
             console.log("Fetching ")
-            const response = await fetch(" http://localhost:5000/order/updateOrderStatus", {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/order/updateOrderStatus`, {
                 method: "post",
                 body: JSON.stringify(values),
                 headers: {

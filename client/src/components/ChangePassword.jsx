@@ -31,15 +31,15 @@ export default function ChangePassword({close}) {
         onSubmit: async (values) => {
 
             const newValues = { ...values, userName: user.userName,_id:user._id }
-            console.log("newValues")
-            console.log(newValues)
+            // console.log("newValues")
+            // console.log(newValues)
 
-            console.log("values passed the Schema Update")
-            console.log(newValues)
+            // console.log("values passed the Schema Update")
+            // console.log(newValues)
 
 
             try {
-                const result = await fetch("http://localhost:5000/user/updatePassword", {
+                const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/user/updatePassword`, {
                     method: "post",
                     body: JSON.stringify(newValues),
                     headers: {

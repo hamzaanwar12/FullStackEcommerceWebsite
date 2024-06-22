@@ -40,7 +40,7 @@ const App = React.memo(() => {
   const BoughtCart = useSelector(state => state.cart)
 
   async function getStripeApiKey() {
-    const data = await fetch("http://localhost:5000/getStripeApiKey", {
+    const data = await fetch(`${process.env.REACT_APP_BACKEND_URL}/getStripeApiKey`, {
       method: "get",
       headers: {
         "Content-Type": "application/json"
@@ -58,7 +58,7 @@ const App = React.memo(() => {
 
     const result = async()=>
     {
-      const products = await fetch(" http://localhost:5000/allProducts", {
+      const products = await fetch(`${process.env.REACT_APP_BACKEND_URL}/allProducts`, {
         method: "get",
         headers: {
           "Content-Type": "application/json",

@@ -36,7 +36,7 @@ const LoginForm = () => {
             // console.log(values)
 
             try {
-                const result = await fetch("http://localhost:5000/user/login", {
+                const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/user/login`, {
                     method: "post",
                     body: JSON.stringify(values),
                     headers: {
@@ -59,7 +59,7 @@ const LoginForm = () => {
                     }))
 
 
-                    const cartResult = await fetch("http://localhost:5000/getCartByUser",
+                    const cartResult = await fetch(`${process.env.REACT_APP_BACKEND_URL}/getCartByUser`,
                         {
                             method: "post",
                             body: JSON.stringify({

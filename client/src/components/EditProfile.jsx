@@ -62,7 +62,7 @@ export default function EditProfile({close}) {
 
 
             try {
-                const result = await fetch("http://localhost:5000/user/updateUserProfile", {
+                const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/user/updateUserProfile`, {
                     method: "post",
                     body: JSON.stringify(newValues),
                     headers: {

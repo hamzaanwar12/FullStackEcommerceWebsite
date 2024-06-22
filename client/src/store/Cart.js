@@ -65,7 +65,7 @@ const cartSlice = createSlice({
 const sendData = (boughtCart) => {
     return async (dispatch) => {
         const sendRequest = async () => {
-            const response = await fetch("http://localhost:5000/updateCart", {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/updateCart`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -94,7 +94,7 @@ const sendData = (boughtCart) => {
 const fetchData = (getCart) => {
     return async (dispatch) => {
         const fetchRequest = async () => {
-            const response = await fetch("http://localhost:5000/getCart", {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/getCart`, {
                 method: "POST",
                 body: JSON.stringify(getCart),
                 headers: {

@@ -57,7 +57,7 @@ export default function CreateProduct() {
           setImages(old => [...old, reader.result])
           console.log("Image reader");
           // console.log(reader.result);
-          console.log(images)
+          // console.log(images)
           // setAvatar(reader.result);
         }
       };
