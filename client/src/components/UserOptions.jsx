@@ -11,7 +11,7 @@ import profile from "../assets/profile.png";
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { SignUpActions } from "../store/SignUpSlice"
-import "./userOptions.css"
+import "./UserOptions.css"
 
 const UserOptions = ({ className }) => {
 
