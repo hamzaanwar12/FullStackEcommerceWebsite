@@ -27,6 +27,7 @@ const EditStyle = {
     errorDiv:"text-red-500 text-sm"
 }
 
+const pageStyles  = {...EditStyle}
 
 export default style
-export {changeStyle,EditStyle}
+export {changeStyle,EditStyle,pageStyles}
