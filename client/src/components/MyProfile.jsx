@@ -15,8 +15,8 @@ const MyProfile = () => {
          navigate("/Login");
     }, []);
 
-    console.log("My Profile")
-    console.log(user)
+    // console.log("My Profile")
+    // console.log(user)
 
     const handleOrders = ()=>
         {

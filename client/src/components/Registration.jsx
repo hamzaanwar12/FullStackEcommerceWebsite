@@ -26,15 +26,17 @@ const initialValues = {
 
 const RegistrationForm = () => {
 
+    const [avatar, setAvatar] = useState(profile)
+    const [visibility, setVisibility] = useState(false)
+    const [error, setError] = useState(null)
+
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const signup = useSelector(state => state.signUp)
 
     // console.log("signup")
     // console.log(signup)
-    const [avatar, setAvatar] = useState(profile)
-    const [visibility, setVisibility] = useState(false)
-    const [error, setError] = useState(null)
+    const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
     const handleFileChange = (event) => {
         // console.log("here We")
@@ -73,7 +75,7 @@ const RegistrationForm = () => {
             // console.log(values)
 
             try {
-                const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/user/registration`, {
+                const result = await fetch(`${apiUrl}/user/registration`, {
                     method: "post",
                     // body: JSON.stringify({...values,avatar:avatar}),
                     body: JSON.stringify({...UserValues,avatar:avatar}),
@@ -97,7 +99,7 @@ const RegistrationForm = () => {
                     if (values.role != "admin") 
                     {
                         try {
-                            const cartResult = await fetch(`${process.env.REACT_APP_BACKEND_URL}/addCart`, {
+                            const cartResult = await fetch(`${apiUrl}/addCart`, {
                                 method: "post",
                                 body: JSON.stringify({
                                     userId: check.id,

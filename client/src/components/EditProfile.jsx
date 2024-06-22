@@ -14,17 +14,19 @@ const initialValues = {
 }
 
 export default function EditProfile({close}) {
-    const previousUser = useSelector(state => state.signUp.user)
+    
     const [error, setError] = useState(null)
     const [avatar, setAvatar] = useState(previousUser.avatar)
+    const previousUser = useSelector(state => state.signUp.user)
     const dispatch = useDispatch()
+    const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 
-    console.log("previousUser")
-    console.log(previousUser)
+    // console.log("previousUser")
+    // console.log(previousUser)
 
     const handleFileChange = (event) => {
-        console.log("here We")
+        // console.log("here We")
         event.preventDefault();
 
         const reader = new FileReader();
@@ -33,8 +35,8 @@ export default function EditProfile({close}) {
         {
             if (reader.readyState === 2) 
             {
-                console.log("Image reader");
-                console.log(reader.result);
+                // console.log("Image reader");
+                // console.log(reader.result);
                 setAvatar(reader.result);
             }
         };
@@ -57,12 +59,12 @@ export default function EditProfile({close}) {
                 newOne: { ...values, avatar: avatar }
             }
 
-            console.log("values passed to Server")
-            console.log(newValues)
+            // console.log("values passed to Server")
+            // console.log(newValues)
 
 
             try {
-                const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/user/updateUserProfile`, {
+                const result = await fetch(`${apiUrl}/user/updateUserProfile`, {
                     method: "post",
                     body: JSON.stringify(newValues),
                     headers: {
@@ -72,13 +74,13 @@ export default function EditProfile({close}) {
 
                 const check = await result.json()
                
-                console.log("check")
-                console.log(check)
+                // console.log("check")
+                // console.log(check)
                
                 if (check.statusCode == 200) 
                 {
-                    console.log("User Updated")
-                    console.log(check)
+                    // console.log("User Updated")
+                    // console.log(check)
 
                     dispatch(SignUpActions.loginUser({
                         user: {
@@ -96,8 +98,8 @@ export default function EditProfile({close}) {
                 }
                 else {
                     setError(check.message)
-                    console.log("check.message")
-                    console.log(check)
+                    // console.log("check.message")
+                    // console.log(check)
                 }
             }
             catch (error) {

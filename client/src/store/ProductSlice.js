@@ -8,6 +8,7 @@ const initialState = {
     viewProduct:null
 }
 
+const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 
 const ProductSlice = createSlice({
@@ -112,7 +113,7 @@ const addProduct = (productData) => {
                 message: "Placing Product"
             })
 
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/addProduct`, {
+            const response = await fetch(`${apiUrl}/addProduct`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -152,7 +153,7 @@ const fetchUserProducts = (id) => {
     return async (dispatch) => {
         const fetchRequest = async () => {
             console.log("Fetching ")
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/getUserProducts`, {
+            const response = await fetch(`${apiUrl}/getUserProducts`, {
                 method: "POST",
                 body: JSON.stringify({userId:id}),
                 headers: {
@@ -188,7 +189,7 @@ const fetchProducts = () => {
     return async (dispatch) => {
         const fetchRequest = async () => {
             console.log("Fetching ")
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/products`, {
+            const response = await fetch(`${apiUrl}/products`, {
                 method: "get",
                 headers: {
                     "Content-Type": "application/json",
@@ -222,7 +223,7 @@ const updateProduct = (values) => {
     return async (dispatch) => {
         const updateRequest = async () => {
             console.log("Fetching ")
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/order/updateProduct`, {
+            const response = await fetch(`${apiUrl}/order/updateProduct`, {
                 method: "post",
                 body: JSON.stringify(values),
                 headers: {

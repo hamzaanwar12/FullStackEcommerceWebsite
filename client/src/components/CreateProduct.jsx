@@ -39,8 +39,8 @@ export default function CreateProduct() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  console.log("shippingInfo in Payment")
-  console.log(shippingInfo)
+  // console.log("shippingInfo in Payment")
+  // console.log(shippingInfo)
 
   const ProductImageChange = (e) => {
     const files = Array.from(e.target.files)
@@ -55,7 +55,7 @@ export default function CreateProduct() {
         {
           setImagePreview(old => [...old, reader.result])
           setImages(old => [...old, reader.result])
-          console.log("Image reader");
+          // console.log("Image reader");
           // console.log(reader.result);
           // console.log(images)
           // setAvatar(reader.result);

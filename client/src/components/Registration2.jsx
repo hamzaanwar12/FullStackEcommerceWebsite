@@ -22,14 +22,15 @@ const RegistrationForm = () => {
     const [visibility,setVisibility] = useState(false)
     const [error,setError] = useState(null)
     const [phone,setphoneValue] = useState("")
-    
+    const apiUrl = process.env.REACT_APP_BACKEND_URL;
+
  
     const { values, errors, handleBlur, handleChange, handleSubmit, touched } = useFormik({
         initialValues,
         validationSchema: regstrationSchema,
 
         onSubmit: async (values,{resetForm}) => {
-            await fetch(`${process.env.REACT_APP_BACKEND_URL}/`, {
+            await fetch(`${apiUrl}/`, {
                 method: "post",
                 body: JSON.stringify(values),
                 headers: {

@@ -29,6 +29,7 @@ import "./App.css"
 
 const App = React.memo(() => {
 
+  const apiUrl = process.env.REACT_APP_BACKEND_URL;
   const [strpieApiKey, setStrpieApiKey] = useState("")
   // const [strpieSecret, setStrpieSecret] = useState("")
   const user = useSelector(state => state.signUp)
@@ -40,7 +41,7 @@ const App = React.memo(() => {
   const BoughtCart = useSelector(state => state.cart)
 
   async function getStripeApiKey() {
-    const data = await fetch(`${process.env.REACT_APP_BACKEND_URL}/getStripeApiKey`, {
+    const data = await fetch(`${apiUrl}/getStripeApiKey`, {
       method: "get",
       headers: {
         "Content-Type": "application/json"
@@ -58,7 +59,7 @@ const App = React.memo(() => {
 
     const result = async()=>
     {
-      const products = await fetch(`${process.env.REACT_APP_BACKEND_URL}allProducts`, {
+      const products = await fetch(`${apiUrl}/allProducts`, {
         method: "get",
         headers: {
           "Content-Type": "application/json",

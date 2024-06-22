@@ -20,11 +20,13 @@ const initialValues = {
 
 const LoginForm = () => {
 
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
     const [visibility, setVisibility] = useState(false)
     const [error, setError] = useState(null)
     const cart = useSelector(state => state.cart)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const apiUrl = process.env.REACT_APP_BACKEND_URL;
+
 
 
     const { values, errors, handleBlur, handleChange, handleSubmit, touched } = useFormik({
@@ -36,7 +38,7 @@ const LoginForm = () => {
             // console.log(values)
 
             try {
-                const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/user/login`, {
+                const result = await fetch(`${apiUrl}/user/login`, {
                     method: "post",
                     body: JSON.stringify(values),
                     headers: {
@@ -49,8 +51,8 @@ const LoginForm = () => {
                     setError(check.message)
                 }
                 else {
-                    console.log("User Found")
-                    console.log(check)
+                    // console.log("User Found")
+                    // console.log(check)
 
                     dispatch(SignUpActions.loginUser({
                         isLogin: true,
@@ -59,7 +61,7 @@ const LoginForm = () => {
                     }))
 
 
-                    const cartResult = await fetch(`${process.env.REACT_APP_BACKEND_URL}/getCartByUser`,
+                    const cartResult = await fetch(`${apiUrl}/getCartByUser`,
                         {
                             method: "post",
                             body: JSON.stringify({

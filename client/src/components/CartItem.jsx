@@ -10,7 +10,7 @@ const CartItem = ({ product }) => {
     const [quantity, setQuantity] = useState(product.quantity)
     const AvailableProducts = useSelector(state => state.products.products)
 
-    console.log(AvailableProducts)
+    // console.log(AvailableProducts)
 
     const getIndex = (id) => {
         console.log(AvailableProducts)

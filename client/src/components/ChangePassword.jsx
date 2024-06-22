@@ -14,6 +14,8 @@ const initialValues = {
 }
 
 export default function ChangePassword({close}) {
+    const apiUrl = process.env.REACT_APP_BACKEND_URL;
+
 
     const [visibility, setVisibility] = useState(false)
     const [newvisibility, setNewVisibility] = useState(false)
@@ -22,8 +24,8 @@ export default function ChangePassword({close}) {
     const navigate = useNavigate()
     const user = useSelector(state => state.signUp.user)
     
-    console.log("Change Password")
-    console.log(user)
+    // console.log("Change Password")
+    // console.log(user)
 
     const { values, errors, handleBlur, handleChange, handleSubmit, touched } = useFormik({
         initialValues,
@@ -39,7 +41,7 @@ export default function ChangePassword({close}) {
 
 
             try {
-                const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/user/updatePassword`, {
+                const result = await fetch(`${apiUrl}/user/updatePassword`, {
                     method: "post",
                     body: JSON.stringify(newValues),
                     headers: {

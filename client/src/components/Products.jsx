@@ -6,13 +6,12 @@ import { useNavigate } from "react-router-dom";
 import "./products.css";
 
 const Products = () => {
-  const [min, max] = [0, 25000];
   const [filterValue, setFilterValue] = useState([min, max]);
   const [filterProducts, setFilterProducts] = useState(null);
   const products = useSelector((state) => state.products.products);
   const user = useSelector((state) => state.signUp);
-
   const navigate = useNavigate();
+  const [min, max] = [0, 25000];
 
   const handleChange = (event, newValue) => {
     setFilterValue(newValue);

@@ -9,6 +9,8 @@ const initialState = {
     pinCode :"",
 }
 
+
+
 const shippingInfo = createSlice({
     name: "shippingInfo",
     initialState,

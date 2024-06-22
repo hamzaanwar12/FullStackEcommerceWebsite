@@ -29,8 +29,8 @@ export default function Payment() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    console.log("shippingInfo in Payment")
-    console.log(shippingInfo)
+    // console.log("shippingInfo in Payment")
+    // console.log(shippingInfo)
 
     // console.log("stripeKey")
     // console.log(stripeApiKey)
@@ -120,7 +120,7 @@ export default function Payment() {
             userId: user._id
         }
 
-        console.log(OrderData)
+        // console.log(OrderData)
 
         try {
 
