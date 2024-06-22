@@ -58,7 +58,7 @@ const App = React.memo(() => {
 
     const result = async()=>
     {
-      const products = await fetch(`${process.env.REACT_APP_BACKEND_URL}/allProducts`, {
+      const products = await fetch(`${process.env.REACT_APP_BACKEND_URL}allProducts`, {
         method: "get",
         headers: {
           "Content-Type": "application/json",
