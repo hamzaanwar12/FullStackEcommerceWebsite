@@ -91,7 +91,7 @@ const App = React.memo(() => {
       console.log("User is logged in, fetching Stripe API key...");
       getStripeApiKey();
     }
-  }, [apiUrl]);
+  }, []);
 
   return (
     <Suspense
