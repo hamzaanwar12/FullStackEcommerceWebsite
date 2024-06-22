@@ -1,0 +1,16 @@
+
+.welcome{
+    background-color: #6239b5;
+    height: 100svh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.welcome::after{
+    content: "";
+    overflow: hidden;
+    width: 100%;
+    height: 130vh;
+    background-color: white;
+    clip-path: polygon(100% 35%, 0% 100%, 100% 100%);
+}

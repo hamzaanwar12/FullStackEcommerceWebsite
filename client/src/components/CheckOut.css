@@ -1,0 +1,8 @@
+.MuiStepConnectorLine{
+    transition: background-color 1s ease-in;
+}
+
+.Mui-active,
+.Mui-completed{
+    color: tomato;
+}

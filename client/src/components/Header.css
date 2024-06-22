@@ -1,0 +1,111 @@
+@media only screen and (min-width: 900px) {
+    .menuBurgerItem1 {
+        transform: rotateZ(45deg);
+        top: 10px;
+        position: absolute;
+    }
+
+    .menuBurgerItem3 {
+        transform: rotateZ(-45deg);
+        position: absolute;
+        top: 10px;
+    }
+
+    .menuBurger {
+        height: 2.25rem;
+        width: auto;
+        /* padding: 0.5rem; */
+        padding: 0px;
+    }
+    .menuBurgerItem {
+
+        height: 0.25rem;
+        width: 2.8vmax;
+        border-radius: 12px;
+        transition: all .4s;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+
+    a {
+        color: rgba(220, 20, 60, 0.733);
+    }
+}
+
+
+@media only screen and ((min-width:800px) and (max-width: 899px)) {
+    .menuBurger {
+        width: 3.5vmax;
+        height: 3.5vmax;
+        position: fixed;
+        top: 2vmax;
+        left: 2vmax;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 0.7vmax;
+        overflow: hidden;
+        z-index: 1000;
+    }
+
+    .menuBurgerItem {
+        height: 0.4vmax;
+        width: 5vmax;
+        border-radius: 30px;
+        transition: all .4s;
+    }
+    
+}
+@media only screen and ((min-width:600px) and (max-width: 799px)) {
+    .menuBurger {
+        width: 4vmax;
+        height: 4.5vmax;
+        position: fixed;
+        top: 2vmax;
+        left: 2vmax;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 0.7vmax;
+        overflow: hidden;
+        z-index: 1000;
+    }
+
+    .menuBurgerItem {
+        height: 0.5vmax;
+        width: 5vmax;
+        border-radius: 30px;
+        transition: all .4s;
+    }
+
+}
+
+@media only screen and ((max-width: 599px)) {
+    .menuBurger {
+        width: 4vmax;
+        height: 4.5vmax;
+        position: fixed;
+        top: 2vmax;
+        left: 2vmax;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 0.7vmax;
+        overflow: hidden;
+        z-index: 1000;
+    }
+
+    .menuBurgerItem {
+        height: 0.5vmax;
+        width: 5vmax;
+        border-radius: 30px;
+        transition: all .4s;
+    }
+
+}

@@ -1,0 +1,14 @@
+/* div.check{
+    background: url("../assets/Delivery Success.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center ;
+} */
+
+div.all{
+    background: url("../assets/Delivery Success.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center ;
+    min-height: 100svh;
+}
