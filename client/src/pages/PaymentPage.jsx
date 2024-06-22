@@ -3,7 +3,7 @@ import Payment from '../components/Payment'
 import Header from '../components/Header'
 import UserOptions from '../components/UserOptions'
 import Footer from '../components/Footer'
-import PaymentProvider from '../components/PAymentProvider'
+import PaymentProvider from '../components/PaymentProvider'
 
 export default function PaymentPage({stripeApiKey}) {
 
