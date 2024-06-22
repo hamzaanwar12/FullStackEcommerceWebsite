@@ -67,7 +67,7 @@ const App = React.memo(() => {
   useEffect(() => {
     const fetchProductsData = async () => {
       try {
-        const response = await fetch(`/allProducts`, {
+        const response = await fetch(`https://full-stack-ecommerce-website-server.vercel.app/allProducts`, {
           method: "get",
           headers: {
             "Content-Type": "application/json",

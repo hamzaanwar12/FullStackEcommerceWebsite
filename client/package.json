@@ -1,7 +1,6 @@
 {
   "name": "client",
   "private": true,
-  "proxy": "https://full-stack-ecommerce-website-server.vercel.app",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
