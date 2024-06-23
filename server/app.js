@@ -17,8 +17,12 @@ config({
 });
 
 // Apply CORS middleware before other middleware
+
+console.log(process.env.FRONTEND_URL)
+
+
 app.use(cors({
-    origin: process.env.FRONTEND_URL,
+    origin: process.env.FRONTEND_URL.trim().replace(/\/$/, ""),
     methods: ["POST", "PUT", "GET", "DELETE"],
     allowedHeaders: 'Content-Type, Authorization',
     credentials: true
