@@ -14,6 +14,8 @@ import "reactjs-popup/dist/index.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./ProductView.css";
+import "./customShadowHeadings.css"
+
 
 const ProductView = ({ productid }) => {
   const product = useSelector((state) => state.products.viewProduct);
@@ -241,7 +243,7 @@ const ProductView = ({ productid }) => {
         </Popup>
       </div>
 
-      <div className="shadow-black shadow-lg h-20 flex flex-row w-1/2 lg:w-1/4 mt-[5%] mx-auto p-2 justify-center items-center">
+      <div className=".shadow-custom-black h-20 flex flex-row w-1/2 lg:w-1/4 mt-[5%] mx-auto p-2 justify-center items-center">
         <h1 className="text-center font-roboto font-medium text-lg sm2:text-2xl mmd:text-4xl w-full">
           Reviews
         </h1>
