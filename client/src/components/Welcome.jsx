@@ -1,6 +1,7 @@
 import { TfiMouse } from "react-icons/tfi";
 import Products from "./Products";
 import "./Welcome.css"
+import "./customShadowHeadings.css"
 
 const Welcome = () => {
 
@@ -21,8 +22,8 @@ const Welcome = () => {
             </div>
             </div>
             </div>
-            <div className="shadow-black shadow-lg h-20 flex flex-row w-[70%] sm2:w-[55%] md:w-[45%] mx-auto p-2 justify-center items-center">
-                <h1 className=" text-center font-roboto font-semibold text-xl sm2:text-2xl  mmd:text-4xl w-[100%] ">Featured Products</h1>
+            <div className="shadow-custom-black h-20 flex flex-row w-[70%] sm2:w-[55%] md:w-[45%] mx-auto p-2 justify-center items-center">
+                <h1 className=" text-center font-roboto font-medium text-xl sm2:text-2xl  mmd:text-4xl w-[100%] ">Featured Products</h1>
             </div>
             <Products />
         </>

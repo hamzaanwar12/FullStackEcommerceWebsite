@@ -137,7 +137,7 @@ const ProductView = ({ productid }) => {
               </div>
 
               <div className="flex flex-row justify-between items-center w-full border-b-2 border-gray-500">
-                <h2 className="font-roboto text-lg mmd:text-3xl text-bold">
+                <h2 className="font-roboto text-lg mmd:text-3xl text-normal">
                   PKR{" "}
                   {new Intl.NumberFormat({ style: "currency" }).format(
                     product.price
@@ -209,7 +209,7 @@ const ProductView = ({ productid }) => {
                 <h2 className="font-semibold text-xl">
                   Product:{" "}
                   <span
-                    className={`font-bold text-2xl ${
+                    className={`font-normal text-lg sm2:text-xl mmd:text-2xl ${
                       product.quantity > 0 ? "text-green-700" : "text-red-700"
                     }`}
                   >
@@ -242,7 +242,7 @@ const ProductView = ({ productid }) => {
       </div>
 
       <div className="shadow-black shadow-lg h-20 flex flex-row w-1/2 lg:w-1/4 mt-[5%] mx-auto p-2 justify-center items-center">
-        <h1 className="text-center font-roboto font-extrabold text-lg sm2:text-2xl mmd:text-4xl w-full">
+        <h1 className="text-center font-roboto font-medium text-lg sm2:text-2xl mmd:text-4xl w-full">
           Reviews
         </h1>
       </div>
