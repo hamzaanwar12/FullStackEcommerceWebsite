@@ -150,8 +150,8 @@ const LoginForm = () => {
 
                 {error && <div className={style.errorDiv}>*{error}</div>}
                 <button type="submit" className={style.button}>Login</button>
-            </form>
                 <span><a className="text-white"  href="/registration">SignUp?</a></span>
+            </form>
         </div>
     )
 }
