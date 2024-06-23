@@ -10,7 +10,7 @@ import { FaUser } from "react-icons/fa";
 const Header = () => {
     
     return (
-        <div className="w-[100%]  m-0 box-border h-[100%] bg-slate-900 font-light text-roboto" >
+        <div className="w-[100%]  m-0 box-border h-[100%]  font-light text-roboto" >
             <ReactNavbar
                 burgerColor="red"
                 burgerColorHover  = "grey"

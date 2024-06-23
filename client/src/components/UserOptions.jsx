@@ -16,8 +16,8 @@ import "./UserOptions.css"
 const UserOptions = ({ className }) => {
 
     const user = useSelector(state => state.signUp);
-    const navigate = useNavigate();
     const dispatch = useDispatch()
+    const navigate = useNavigate();
     const [open, setOpen] = useState(false);
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
@@ -52,7 +52,7 @@ const UserOptions = ({ className }) => {
 
     return (
         <SpeedDial
-            className={className ? className : 'fixed right-6 mmd:top-5'}
+            className={className ? className : 'fixed right-3 mmd:right-6 top-8 mmd:top-7'}
             ariaLabel="SpeedDial tooltip example"
             onClose={() => setOpen(false)}
             onOpen={() => setOpen(true)}

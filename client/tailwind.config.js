@@ -64,7 +64,7 @@ export default {
         'mmd': '990px',
         'lg': '991px',
          
-      } 
+      }
     },
   },
   plugins: [],

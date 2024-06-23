@@ -1,8 +1,23 @@
+.menuBurger {
+    width: 3vmax;
+    height: 2.5vmax;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 1vmax;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+
 @media only screen and (min-width: 900px) {
     .menuBurgerItem1 {
         transform: rotateZ(45deg);
-        top: 10px;
-        position: absolute;
+        /* top: 10px;
+        position: absolute; */
+        right:auto
     }
 
     .menuBurgerItem3 {
@@ -20,7 +35,7 @@
     .menuBurgerItem {
 
         height: 0.25rem;
-        width: 2.8vmax;
+        width: 5vmax;
         border-radius: 12px;
         transition: all .4s;
         margin-top: 3px;
@@ -89,7 +104,7 @@
         width: 4vmax;
         height: 4.5vmax;
         position: fixed;
-        top: 2vmax;
+        top: 1.25rem;
         left: 2vmax;
         display: flex;
         flex-direction: column;
