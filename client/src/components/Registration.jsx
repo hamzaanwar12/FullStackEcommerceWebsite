@@ -164,6 +164,12 @@ const RegistrationForm = () => {
       },
     });
 
+
+    const handleNavigateToLogin = (event) => {
+      event.preventDefault();
+      navigate("/Login");
+    };
+
   return (
     <div
       className={`all flex flex-row py-[5%] items-center w-[100%] mx-auto p-1 mmd:p-4`}
@@ -316,7 +322,7 @@ const RegistrationForm = () => {
         </button>
           <button
             className={style.button}
-            onClick={navigate("/Login")}
+            onClick={handleNavigateToLogin}
           >
             Have an Account?
           </button>

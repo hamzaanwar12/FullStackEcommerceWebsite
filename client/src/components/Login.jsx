@@ -112,6 +112,10 @@ const LoginForm = () => {
 
     });
 
+    const handleNavigateToRegistration = (event) => {
+        event.preventDefault();
+        navigate("/registration");
+      };
     return (
 
         <div className="flex items-center all overflow-y-hidden">
@@ -150,7 +154,7 @@ const LoginForm = () => {
 
                 {error && <div className={style.errorDiv}>*{error}</div>}
                 <button type="submit" className={style.button}>Login</button>
-                <button className= {style.button} onClick={navigate("/registration")} >SignUp?</button>
+                <button className= {style.button} onClick={handleNavigateToRegistration} >SignUp?</button>
             </form>
         </div>
     )
