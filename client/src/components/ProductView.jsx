@@ -125,10 +125,10 @@ const ProductView = ({ productid }) => {
           <div className="w-full mmd:w-1/2 h-auto box-border flex items-center p-1 mmd:p-2 mmd:pl-7 border-2 border-white">
             <div className="h-[85%] w-full flex items-center p-2 flex-col gap-y-3">
               <div className="flex flex-col w-full border-b-2 border-gray-500">
-                <h1 className="font-roboto tracking-widest font-black text-xl mmd:text-4xl">
+                <h1 className="font-roboto tracking-widest font-black text-xl mmd:text-3xl">
                   {product.name}
                 </h1>
-                <p className="font-roboto font-bold mmd:font-extrabold text-xs sm2:text-md mmd:text-lg">
+                <p className="font-roboto font-bold mmd:font-extrabold text-xs sm2:text-sm mmd:text-md">
                   Product : <span>{product._id}</span>
                 </p>
               </div>
@@ -139,7 +139,7 @@ const ProductView = ({ productid }) => {
               </div>
 
               <div className="flex flex-row justify-between items-center w-full border-b-2 border-gray-500">
-                <h2 className="font-roboto text-lg mmd:text-3xl text-normal">
+                <h2 className="font-roboto text-lg mmd:text-2xl font-normal">
                   PKR{" "}
                   {new Intl.NumberFormat({ style: "currency" }).format(
                     product.price
@@ -211,7 +211,7 @@ const ProductView = ({ productid }) => {
                 <h2 className="font-semibold text-xl">
                   Product:{" "}
                   <span
-                    className={`font-normal text-lg sm2:text-xl mmd:text-2xl ${
+                    className={`font-normal text-lg sm2:text-xl  ${
                       product.quantity > 0 ? "text-green-700" : "text-red-700"
                     }`}
                   >
@@ -243,7 +243,7 @@ const ProductView = ({ productid }) => {
         </Popup>
       </div>
 
-      <div className=".shadow-custom-black h-20 flex flex-row w-1/2 lg:w-1/4 mt-[5%] mx-auto p-2 justify-center items-center">
+      <div className="shadow-custom-black h-20 flex flex-row w-1/2 lg:w-1/4 mt-[5%] mx-auto p-2 justify-center items-center">
         <h1 className="text-center font-roboto font-medium text-lg sm2:text-2xl mmd:text-4xl w-full">
           Reviews
         </h1>

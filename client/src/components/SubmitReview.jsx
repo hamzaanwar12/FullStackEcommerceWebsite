@@ -83,14 +83,14 @@ const SubmitReview = ({ product, close }) => {
     return (
         <div className="flex flex-col gap-y-5 items-center justify-center box-border">
             <div className=" flex items-center">
-                <h1 className=" font-logoStyle text-2xl">What do you think of this product</h1>
+                <h1 className=" font-roboto text-lg">What do you think of this product</h1>
             </div>
             <form className="flex flex-col gap-y-2 justify-center w-[70%] mx-auto" onSubmit={handleSubmit}>
                 <textarea name="comment" className="text-black h-32 outline-none border-2 border-violet-600 p-2" type="text" onChange={handleChange} placeholder="Comment here" value={comment} />
                 {error && <p>*{error}</p>}
 
                 <div className="flex flex-row items-center"> 
-                    <h1 className="font-logoStyle text-2xl">Rate it</h1>
+                    <h1 className="font-roboto text-lg">Rate it</h1>
                     <ReactStars {...{ ...options, value: 0 }}></ReactStars>
                 </div>
 
