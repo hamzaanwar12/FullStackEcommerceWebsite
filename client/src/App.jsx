@@ -6,8 +6,8 @@ import { fetchUserOrders } from "./store/Order.js";
 import { fetchProducts, ProductActions } from "./store/ProductSlice.js";
 
 const Lazy = lazy(() => import("./components/Loader"));
-const RegistrationForm = lazy(() => import("./components/Registration"));
-const LoginForm = lazy(() => import("./components/Login"));
+const RegistrationPage = lazy(() => import("./pages/RegistrationPage"));
+const LoginPage = lazy(() => import("./pages/LoginPage"));
 const Home = lazy(() => import("./pages/Home"));
 const ProductSpecific = lazy(() => import("./pages/ProductSpecific"));
 const Search = lazy(() => import("./pages/SearchPage"));
@@ -104,8 +104,8 @@ const App = React.memo(() => {
     >
       <Router>
         <Routes>
-          <Route path="/registration" element={<RegistrationForm />} />
-          <Route path="/Login" element={<LoginForm />} />
+          <Route path="/registration" element={<RegistrationPage />} />
+          <Route path="/Login" element={<LoginPage />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/product/:productid" element={<ProductSpecific />} />
           <Route path="/Search" element={<Search />} />

@@ -150,7 +150,7 @@ const LoginForm = () => {
 
                 {error && <div className={style.errorDiv}>*{error}</div>}
                 <button type="submit" className={style.button}>Login</button>
-                <span><a className="text-white" onClick={navigate("/registration")} >SignUp?</a></span>
+                <span><button className= "border-0 ouline-0 bg-transparent text-white" onClick={navigate("/registration")} >SignUp?</button></span>
             </form>
         </div>
     )
