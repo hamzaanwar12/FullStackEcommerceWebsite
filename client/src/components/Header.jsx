@@ -19,7 +19,7 @@ const Header = () => {
                 logoHeight = "9rem"
                 logoHoverColor = "#6239b5"
                 navColor1 = "white"
-                link1Size = "2rem"
+                link1Size = "1.5rem"
                 link1Margin ="1vmax"
                 link1Family = "Roboto"
                 // link1Color = "rgba(0,0,0,0.6)"
@@ -42,7 +42,7 @@ const Header = () => {
                 profileIcon = {true}
                 ProfileIconElement = {FaUser}
                 profileIconColor = 'black'
-                profileIconSize = "2rem"
+                profileIconSize = "1.5rem"
                 profileIconMargin = "1rem"
                 // profileIconColorHover = "rgba(220, 20, 60, 0.733)"
                 profileIconColorHover = "#6239b5"
@@ -50,7 +50,7 @@ const Header = () => {
                 cartIcon = {true}
                 CartIconElement = {FaCartShopping}
                 cartIconColor = "black"
-                cartIconSize = "2rem"
+                cartIconSize = "1.5rem"
                 cartIconMargin = "1rem"
                 // cartIconColorHover = "rgba(220, 20, 60, 0.733)"
                 cartIconColorHover = "#6239b5"
