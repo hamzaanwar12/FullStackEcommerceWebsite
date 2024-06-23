@@ -316,7 +316,7 @@ const RegistrationForm = () => {
         </button>
         <span>
           <button
-            className="border-0 ouline-0 bg-transparent text-white"
+            className={style.button}
             onClick={navigate("/Login")}
           >
             Have an Account?
