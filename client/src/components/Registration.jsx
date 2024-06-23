@@ -314,14 +314,13 @@ const RegistrationForm = () => {
         <button type="submit" className={style.button}>
           Register
         </button>
-        <span>
           <button
             className={style.button}
             onClick={navigate("/Login")}
           >
             Have an Account?
           </button>
-        </span>
+        
       </form>
 
       {/* <div >
