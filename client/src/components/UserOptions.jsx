@@ -15,10 +15,10 @@ import "./UserOptions.css"
 
 const UserOptions = ({ className }) => {
 
-    const [open, setOpen] = useState(false);
+    const user = useSelector(state => state.signUp);
     const navigate = useNavigate();
     const dispatch = useDispatch()
-    const user = useSelector(state => state.signUp);
+    const [open, setOpen] = useState(false);
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 

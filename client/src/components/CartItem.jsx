@@ -6,9 +6,9 @@ import { ProductActions } from "../store/ProductSlice";
 
 const CartItem = ({ product }) => {
 
-    const dispatch = useDispatch()
-    const [quantity, setQuantity] = useState(product.quantity)
     const AvailableProducts = useSelector(state => state.products.products)
+    const [quantity, setQuantity] = useState(product.quantity)
+    const dispatch = useDispatch()
 
     // console.log(AvailableProducts)
 

@@ -26,13 +26,13 @@ const initialValues = {
 
 const RegistrationForm = () => {
 
+    const signup = useSelector(state => state.signUp)
     const [avatar, setAvatar] = useState(profile)
     const [visibility, setVisibility] = useState(false)
     const [error, setError] = useState(null)
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const signup = useSelector(state => state.signUp)
 
     // console.log("signup")
     // console.log(signup)

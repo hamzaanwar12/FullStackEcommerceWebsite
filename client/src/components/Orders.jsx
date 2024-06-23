@@ -8,11 +8,11 @@ import { useEffect } from "react";
 
 function Orders() {
 
-  const dispatch = useDispatch()
   const orders = useSelector((state) => state.orders.orders); // Assuming you have an 'orders' slice
   const login = useSelector((state) => state.signUp);
-  const user = login.user
+  const dispatch = useDispatch()
   const navigate = useNavigate()
+  const user = login.user
 
   const columns = [
     { field: 'id', headerName: 'Order Id', minWidth: 300, },

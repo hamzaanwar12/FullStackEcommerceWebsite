@@ -15,9 +15,9 @@ const initialValues = {
 
 export default function EditProfile({close}) {
     
+    const previousUser = useSelector(state => state.signUp.user)
     const [error, setError] = useState(null)
     const [avatar, setAvatar] = useState(previousUser.avatar)
-    const previousUser = useSelector(state => state.signUp.user)
     const dispatch = useDispatch()
 
 

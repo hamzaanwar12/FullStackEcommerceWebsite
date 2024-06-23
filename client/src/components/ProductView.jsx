@@ -16,11 +16,11 @@ import "slick-carousel/slick/slick-theme.css";
 import "./ProductView.css";
 
 const ProductView = ({ productid }) => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [count, setCount] = useState(1);
   const product = useSelector((state) => state.products.viewProduct);
   const login = useSelector((state) => state.signUp);
+  const [count, setCount] = useState(1);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const options = {
     edit: false,

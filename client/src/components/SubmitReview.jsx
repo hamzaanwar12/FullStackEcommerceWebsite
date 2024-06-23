@@ -9,8 +9,8 @@ import "./submitreview.css"
 const SubmitReview = ({ product, close }) => {
 
 
-    const [rating, setRating] = useState(0)
     const user = useSelector(state => state.signUp.user)
+    const [rating, setRating] = useState(0)
     const navigate = useNavigate();
 
     
@@ -23,6 +23,10 @@ const SubmitReview = ({ product, close }) => {
         setRating(newRating)
     }
 
+    const [comment, setComment] = useState("")
+    const [error, setError] = useState(false)
+    const dispatch = useDispatch()
+
     const options = {
         edit: true,
         color: "rgba(20,20,20,0.1)",
@@ -32,11 +36,6 @@ const SubmitReview = ({ product, close }) => {
         isHalf: true,
         onChange: handleRating
     }
-
-
-    const [comment, setComment] = useState("")
-    const [error, setError] = useState(false)
-    const dispatch = useDispatch()
 
     const handleChange = (event) => setComment(event.target.value)
     const handleSubmit = (event) => {

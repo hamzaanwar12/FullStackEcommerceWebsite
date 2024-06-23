@@ -20,18 +20,15 @@ const shippingStyle = {
 
 export default function NewPayment() {
 
-    const payBtn = useRef(null)
     const shippingInfo = useSelector(state => state.shippingInfo)
     const cart = useSelector(state => state.cart)
     const login = useSelector(state => state.signUp)
+
+    const payBtn = useRef(null)
     const user = login.user
     
     const navigate = useNavigate()
     const dispatch = useDispatch()
-
-    // console.log("shippingInfo in Payment")
-    // console.log(shippingInfo)
-
 
     const handleSubmit = async (event) => 
     {

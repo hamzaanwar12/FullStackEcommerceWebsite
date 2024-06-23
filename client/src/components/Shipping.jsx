@@ -27,16 +27,17 @@ const shippingStyle = {
 const Shipping = () => {
 
     
+    
+    const cart = useSelector(state => state.cart)
+    const user = useSelector((state) => state.signUp);
+    const shippingInfo = useSelector(state=>state.shippingInfo)
+    
     const [phone, setPhone] = useState(shippingInfo.phone)
     const [country, setCountry] = useState(shippingInfo.country)
     const [state, setState] = useState(shippingInfo.state)
     const [city, setCity] = useState(shippingInfo.city)
     const [address, setAddress] = useState(shippingInfo.address)
     const [pinCode, setPinCode] = useState(shippingInfo.pinCode)
-    
-    const cart = useSelector(state => state.cart)
-    const user = useSelector((state) => state.signUp);
-    const shippingInfo = useSelector(state=>state.shippingInfo)
     
     const dispatch = useDispatch()
     const navigate = useNavigate()

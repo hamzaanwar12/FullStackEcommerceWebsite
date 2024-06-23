@@ -24,18 +24,20 @@ const shippingStyle = {
 
 export default function CreateProduct() {
 
+  const shippingInfo = useSelector(state => state.shippingInfo)
+  const cart = useSelector(state => state.cart)
+  const user = useSelector(state => state.signUp.user)
+
   const [price, setPrice] = useState(0)
   const [productNumber, setProductNumber] = useState(0)
   // const [stock,setStock] = useState()
+  
   const [description, setDescription] = useState("")
   const [productName, setProductName] = useState("")
   const [images, setImages] = useState([])
   const [imagePreview, setImagePreview] = useState([])
 
   const payBtn = useRef(null)
-  const shippingInfo = useSelector(state => state.shippingInfo)
-  const cart = useSelector(state => state.cart)
-  const user = useSelector(state => state.signUp.user)
   const navigate = useNavigate()
   const dispatch = useDispatch()
 

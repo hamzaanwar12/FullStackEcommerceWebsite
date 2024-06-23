@@ -20,12 +20,14 @@ const shippingStyle = {
 
 export default function Payment() {
 
-    const payBtn = useRef(null)
-    const stripe = useStripe()
-    const elements = useElements()
     const shippingInfo = useSelector(state => state.shippingInfo)
     const cart = useSelector(state => state.cart)
     const user = useSelector(state => state.signUp.user)
+
+    const payBtn = useRef(null)
+    const stripe = useStripe()
+    const elements = useElements()
+    
     const navigate = useNavigate()
     const dispatch = useDispatch()
 

@@ -16,12 +16,12 @@ const initialValues = {
 export default function ChangePassword({close}) {
 
 
+    const user = useSelector(state => state.signUp.user)
     const [visibility, setVisibility] = useState(false)
     const [newvisibility, setNewVisibility] = useState(false)
     const [error, setError] = useState(null)
     
     const navigate = useNavigate()
-    const user = useSelector(state => state.signUp.user)
     
     // console.log("Change Password")
     // console.log(user)

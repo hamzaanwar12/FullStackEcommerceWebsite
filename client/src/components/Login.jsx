@@ -20,9 +20,9 @@ const initialValues = {
 
 const LoginForm = () => {
 
+    const cart = useSelector(state => state.cart)
     const [visibility, setVisibility] = useState(false)
     const [error, setError] = useState(null)
-    const cart = useSelector(state => state.cart)
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
