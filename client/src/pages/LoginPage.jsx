@@ -10,7 +10,6 @@ export default function LoginPage() {
       {/* <UserOptions className="relative top-7 left-[45%]"/> */}
       <UserOptions />
       <Login />
-      <Footer />
     </>
   );
 }

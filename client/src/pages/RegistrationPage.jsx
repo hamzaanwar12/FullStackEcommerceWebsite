@@ -11,7 +11,6 @@ export default function RegistrationPage() {
       {/* <UserOptions className="relative top-7 left-[45%]"/> */}
       <UserOptions />
       <Login />
-      <Footer />
     </>
   );
 }
