@@ -83,7 +83,7 @@ const Shipping = () => {
 
             <form className={shippingStyle.form} onSubmit={handleSubmit}>
             <div className='h-10 sm2:h-15 flex flex-row w-[100%] mx-auto sm2:p-2 justify-center items-center'>
-                    <h2 className='text-lg sm2:text-xl mmd:text-3xl font-extrabold'>Shipping Details</h2>
+                    <h2 className='text-lg sm2:text-xl mmd:text-3xl font-semibold'>Shipping Details</h2>
                 </div>
                 
                 {/* <div className='h-20 flex flex-row w-[100%] mx-auto p-2 justify-center items-center'>

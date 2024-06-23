@@ -115,7 +115,7 @@ const LoginForm = () => {
     return (
 
         <div className="flex items-center all overflow-y-hidden">
-            <form className="font-stylish  flex flex-col items-center h-[47%] gap-y-5 mmd:gap-y-12 px-1 mmd:px-5 py-2  w-[95%] md:w-[80%] mmd:w-[55%] box-border m-auto  rounded-3xl drop-shadow-2xl shadow-black-500/50 backdrop-blur-xl " onSubmit={handleSubmit}>
+            <form className="font-robot  flex flex-col items-center h-[47%] gap-y-5 mmd:gap-y-12 px-1 mmd:px-5 py-2  w-[95%] md:w-[80%] mmd:w-[55%] box-border m-auto  rounded-3xl drop-shadow-2xl shadow-black-500/50 backdrop-blur-xl " onSubmit={handleSubmit}>
                 <div className={style.formDiv}>
                     <label htmlFor="userName">User Name</label>
                     <input className={style.input}
@@ -147,11 +147,11 @@ const LoginForm = () => {
                         {errors.password && touched.password && <div className={style.errorDiv}>*{errors.password}</div>}
                     </div>
                 </div>
-                <span><a className="text-white" href="/Registration">SignUp</a></span>
 
                 {error && <div className={style.errorDiv}>*{error}</div>}
                 <button type="submit" className={style.button}>Login</button>
             </form>
+                <span><a className="text-white"  href="/registration">SignUp?</a></span>
         </div>
     )
 }

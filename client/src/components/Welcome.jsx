@@ -22,7 +22,7 @@ const Welcome = () => {
             </div>
             </div>
             <div className="shadow-black shadow-lg h-20 flex flex-row w-[70%] sm2:w-[55%] md:w-[45%] mx-auto p-2 justify-center items-center">
-                <h1 className=" text-center font-roboto font-extrabold text-xl sm2:text-2xl  mmd:text-4xl w-[100%] ">Featured Products</h1>
+                <h1 className=" text-center font-roboto font-semibold text-xl sm2:text-2xl  mmd:text-4xl w-[100%] ">Featured Products</h1>
             </div>
             <Products />
         </>

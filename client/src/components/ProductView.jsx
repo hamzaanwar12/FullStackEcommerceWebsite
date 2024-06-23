@@ -123,21 +123,21 @@ const ProductView = ({ productid }) => {
           <div className="w-full mmd:w-1/2 h-auto box-border flex items-center p-1 mmd:p-2 mmd:pl-7 border-2 border-white">
             <div className="h-[85%] w-full flex items-center p-2 flex-col gap-y-3">
               <div className="flex flex-col w-full border-b-2 border-gray-500">
-                <h1 className="font-logoStyle tracking-widest font-black text-xl mmd:text-4xl">
+                <h1 className="font-roboto tracking-widest font-black text-xl mmd:text-4xl">
                   {product.name}
                 </h1>
-                <p className="font-logoStyle font-bold mmd:font-extrabold text-xs sm2:text-md mmd:text-lg">
+                <p className="font-roboto font-bold mmd:font-extrabold text-xs sm2:text-md mmd:text-lg">
                   Product : <span>{product._id}</span>
                 </p>
               </div>
 
-              <div className="font-logoStyle font-bold flex flex-col text-lg mmd:text-xl box-border w-full border-b-2 border-gray-500">
+              <div className="font-roboto font-bold flex flex-col text-lg mmd:text-xl box-border w-full border-b-2 border-gray-500">
                 <h3>Give a review</h3>
                 <ReactStars options={options} />
               </div>
 
               <div className="flex flex-row justify-between items-center w-full border-b-2 border-gray-500">
-                <h2 className="font-logoStyle text-lg mmd:text-3xl text-bold">
+                <h2 className="font-roboto text-lg mmd:text-3xl text-bold">
                   PKR{" "}
                   {new Intl.NumberFormat({ style: "currency" }).format(
                     product.price
@@ -170,7 +170,7 @@ const ProductView = ({ productid }) => {
                 {login.isLogin ? (
                   <Popup
                     trigger={
-                      <button className="font-logoStyle font-extrabold bg-red-500 sm2:mr-10 text-center w-25 sm2:w-32 text-white rounded-lg text-sm sm2:text-md p-2 sm2:p-3  border-none border-white hover:border-re active:border-none active:bg-red-500 active:text-white hover:text-red-500 hover:border-red-500 hover:bg-white">
+                      <button className="font-roboto font-extrabold bg-red-500 sm2:mr-10 text-center w-25 sm2:w-32 text-white rounded-lg text-sm sm2:text-md p-2 sm2:p-3  border-none border-white hover:border-re active:border-none active:bg-red-500 active:text-white hover:text-red-500 hover:border-red-500 hover:bg-white">
                         Add to cart
                       </button>
                     }
@@ -197,7 +197,7 @@ const ProductView = ({ productid }) => {
                   //   {(close) => <AddToCart close={close} />}
                   // </Popup>
                   <button
-                    className="font-logoStyle font-extrabold bg-red-500 sm2:mr-10 text-center w-25 sm2:w-32 text-white rounded-lg text-sm sm2:text-md p-2 sm2:p-3 border-none border-white hover:border-re active:border-none active:bg-red-500 active:text-white hover:text-red-500 hover:border-red-500 hover:bg-white"
+                    className="font-roboto font-extrabold bg-red-500 sm2:mr-10 text-center w-25 sm2:w-32 text-white rounded-lg text-sm sm2:text-md p-2 sm2:p-3 border-none border-white hover:border-re active:border-none active:bg-red-500 active:text-white hover:text-red-500 hover:border-red-500 hover:bg-white"
                     onClick={AddCartHandler}
                   >
                     Add to cart
