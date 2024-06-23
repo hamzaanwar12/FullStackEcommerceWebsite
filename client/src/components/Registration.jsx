@@ -323,9 +323,9 @@ const RegistrationForm = () => {
         
       </form>
 
-      {/* <div >
+      {/* <di >
                 <img className="w-[80%] h-[70%] bg-center" src={DeliverySuccess} alt="notfound" />
-            </div> */}
+            </di> */}
     </div>
   );
 };
