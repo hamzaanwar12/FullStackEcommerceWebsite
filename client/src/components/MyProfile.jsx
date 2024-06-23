@@ -38,7 +38,7 @@ const MyProfile = () => {
                     width:"15rem",
                     borderRadius:"50%"}} */}
                     <div >
-                        <img className="h-Img w-Img msm:h-check2 msm:w-check2 sm:h-buttons sm:w-buttons mmd:h-check2 mmd:w-buttons self-center rounded-[50%]" src={user.user.avatar} alt="" />
+                        <img className="h-Img w-Img msm:h-check2 msm:w-check2 sm:h-buttons sm:w-buttons mmd:h-check2 mmd:w-check2 self-center rounded-[50%]" src={user.user.avatar} alt="" />
                     </div>
                     
                     <Popup className="border-none"
