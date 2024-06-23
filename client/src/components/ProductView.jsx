@@ -205,7 +205,7 @@ const ProductView = ({ productid }) => {
                 )}
               </div>
 
-              <div className="font-logoStyle flex items-center w-full border-b-2 border-gray-500">
+              <div className="font-roboto flex items-center w-full border-b-2 border-gray-500">
                 <h2 className="font-semibold text-xl">
                   Product:{" "}
                   <span
@@ -242,7 +242,7 @@ const ProductView = ({ productid }) => {
       </div>
 
       <div className="shadow-black shadow-lg h-20 flex flex-row w-1/2 lg:w-1/4 mt-[5%] mx-auto p-2 justify-center items-center">
-        <h1 className="text-center font-logoStyle font-extrabold text-lg sm2:text-2xl mmd:text-4xl w-full">
+        <h1 className="text-center font-roboto font-extrabold text-lg sm2:text-2xl mmd:text-4xl w-full">
           Reviews
         </h1>
       </div>

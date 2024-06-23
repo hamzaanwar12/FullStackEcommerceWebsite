@@ -52,7 +52,7 @@ const UserOptions = ({ className }) => {
 
     return (
         <SpeedDial
-            className={className ? className : 'fixed right-1 mmd:right-6 top-12 mmd:top-7'}
+            className={className ? className : 'fixed right-1 mmd:right-6 top-12 mmd:top-5'}
             ariaLabel="SpeedDial tooltip example"
             onClose={() => setOpen(false)}
             onOpen={() => setOpen(true)}

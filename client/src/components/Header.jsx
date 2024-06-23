@@ -21,7 +21,7 @@ const Header = () => {
                 navColor1 = "white"
                 link1Size = "2rem"
                 link1Margin ="1vmax"
-                link1Family = "Dancing Script"
+                link1Family = "Roboto"
                 // link1Color = "rgba(0,0,0,0.6)"
                 link1Color = "black"
                 // link1ColorHover  = "rgba(220, 20, 60, 0.733)"
