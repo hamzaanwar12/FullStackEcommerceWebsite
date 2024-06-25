@@ -35,7 +35,7 @@
     .menuBurgerItem {
 
         height: 0.25rem;
-        width: 5vmax;
+        width: 3vmax;
         border-radius: 12px;
         transition: all .4s;
         margin-top: 3px;
