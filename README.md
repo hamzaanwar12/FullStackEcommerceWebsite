@@ -33,7 +33,7 @@ This project provides a multipage web application with a frontend built using Vi
 ### RestAPI
 - **Build my own Rest APi for Products**:
   CheckOut the Link for the Products Api to Use In Website:
--https://full-stack-ecommerce-website-server.vercel.app/allProducts-
+-https://full-stack-ecommerce-website-server.vercel.app/allProducts
 
 ## Installation
 
